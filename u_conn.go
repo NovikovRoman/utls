@@ -531,7 +531,7 @@ func (uconn *UConn) SetTLSVers(minTLSVers, maxTLSVers uint16, specExtensions []T
 			case *SupportedVersionsExtension:
 				findVersionsInSupportedVersionsExtensions := func(versions []uint16) (uint16, uint16) {
 					// returns (minVers, maxVers)
-					minVers := uint16(0)
+					minVers := uint16(VersionTLS13)
 					maxVers := uint16(0)
 					for _, vers := range versions {
 						if vers == GREASE_PLACEHOLDER {
